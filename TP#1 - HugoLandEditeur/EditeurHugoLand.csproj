@@ -80,6 +80,8 @@
     <Reference Include="System.Drawing">
       <Name>System.Drawing</Name>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms">
       <Name>System.Windows.Forms</Name>
     </Reference>
@@ -93,6 +95,11 @@
     </Compile>
     <Compile Include="BitmapCache.cs" />
     <Compile Include="csteApplication.cs" />
+    <Compile Include="HugoLandDb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HugoLandDb.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Modele\CMap.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -154,6 +161,13 @@
     <None Include="GameData\MonstreLookups.csv" />
     <None Include="GameData\ObjetLookups.csv" />
     <None Include="GameData\TileLookups.csv" />
+    <EntityDeploy Include="HugoLandDb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HugoLandDb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="HugoLandDb.edmx.diagram">
+      <DependentUpon>HugoLandDb.edmx</DependentUpon>
+    </None>
     <None Include="Resources\HugoLand.jpg" />
   </ItemGroup>
   <ItemGroup />
