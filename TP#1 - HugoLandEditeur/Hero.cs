@@ -14,24 +14,32 @@ namespace HugoLandEditeur
     
     public partial class Hero
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Hero()
+        {
+            this.Items = new HashSet<Item>();
+        }
+    
+        public int CompteJoueurId { get; set; }
         public int Id { get; set; }
         public int Niveau { get; set; }
-        public int Experience { get; set; }
-        public string x { get; set; }
-        public string y { get; set; }
-        public int Argent { get; set; }
-        public int StatsStr { get; set; }
-        public int StatsDex { get; set; }
-        public int StatsInt { get; set; }
-        public int StatsVitalitê { get; set; }
-        public string NomHero { get; set; }
-        public bool EstConnectê { get; set; }
-        public int InventaireHeroId { get; set; }
+        public long Experience { get; set; }
+        public int x { get; set; }
+        public int y { get; set; }
+        public decimal Argent { get; set; }
+        public int StatStr { get; set; }
+        public int StatDex { get; set; }
+        public int StatInt { get; set; }
+        public int StatVitalite { get; set; }
         public int MondeId { get; set; }
+        public int ClasseId { get; set; }
+        public string NomHero { get; set; }
+        public bool EstConnecte { get; set; }
     
-        public virtual Classes Class { get; set; }
+        public virtual Classe Classe { get; set; }
         public virtual CompteJoueur CompteJoueur { get; set; }
-        public virtual InventaireHero InventaireHero { get; set; }
         public virtual Monde Monde { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Item> Items { get; set; }
     }
 }

@@ -19,7 +19,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>HugoLandEditeur</RootNamespace>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
-    <StartupObject />
+    <StartupObject>HugoLandEditeur.Program</StartupObject>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -71,11 +71,20 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data">
       <Name>System.Data</Name>
     </Reference>
@@ -98,11 +107,36 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="BitmapCache.cs" />
+    <Compile Include="Classe.cs">
+      <DependentUpon>HugoLandContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CompteJoueur.cs">
+      <DependentUpon>HugoLandContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="csteApplication.cs" />
-    <Compile Include="HugoLandDb.Designer.cs">
+    <Compile Include="EffetItem.cs">
+      <DependentUpon>HugoLandContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Hero.cs">
+      <DependentUpon>HugoLandContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HugoLandContext.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HugoLandDb.edmx</DependentUpon>
+      <DependentUpon>HugoLandContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HugoLandContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HugoLandContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HugoLandContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HugoLandContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Item.cs">
+      <DependentUpon>HugoLandContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Modele\CMap.cs">
       <SubType>Code</SubType>
@@ -111,8 +145,26 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Modele\TypeTyle.cs" />
-    <Compile Include="Presentation\Login.xaml.cs">
-      <DependentUpon>Login.xaml</DependentUpon>
+    <Compile Include="Monde.cs">
+      <DependentUpon>HugoLandContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Monstre.cs">
+      <DependentUpon>HugoLandContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ObjetMonde.cs">
+      <DependentUpon>HugoLandContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\frmNewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\frmNewUser.Designer.cs">
+      <DependentUpon>frmNewUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -139,6 +191,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Modele\Tile.cs" />
+    <EmbeddedResource Include="Presentation\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\frmNewUser.resx">
+      <DependentUpon>frmNewUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -162,26 +220,34 @@
     <Content Include="GameData\Monstres.bmp" />
     <Content Include="GameData\Objets.bmp" />
     <Content Include="GameData\Tiles.bmp" />
+    <Content Include="HugoLandContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HugoLandContext.edmx</DependentUpon>
+      <LastGenOutput>HugoLandContext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="HugoLandContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HugoLandContext.edmx</DependentUpon>
+      <LastGenOutput>HugoLandContext.cs</LastGenOutput>
+    </Content>
     <None Include="GameData\AllTilesLookups.csv" />
     <None Include="GameData\ClasseHeroLookups.csv" />
     <None Include="GameData\ItemLookups.csv" />
     <None Include="GameData\MonstreLookups.csv" />
     <None Include="GameData\ObjetLookups.csv" />
     <None Include="GameData\TileLookups.csv" />
-    <EntityDeploy Include="HugoLandDb.edmx">
+    <EntityDeploy Include="HugoLandContext.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>HugoLandDb.Designer.cs</LastGenOutput>
+      <LastGenOutput>HugoLandContext.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="HugoLandDb.edmx.diagram">
-      <DependentUpon>HugoLandDb.edmx</DependentUpon>
+    <None Include="HugoLandContext.edmx.diagram">
+      <DependentUpon>HugoLandContext.edmx</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Resources\HugoLand.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Presentation\Login.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -17,27 +17,27 @@ namespace HugoLandEditeur
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Monde()
         {
-            this.Classes = new HashSet<Classes>();
-            this.ObjetMondes = new HashSet<ObjetMonde>();
-            this.Items = new HashSet<Items>();
+            this.Classes = new HashSet<Classe>();
+            this.Heros = new HashSet<Hero>();
+            this.Items = new HashSet<Item>();
             this.Monstres = new HashSet<Monstre>();
-            this.Heroes = new HashSet<Hero>();
+            this.ObjetMondes = new HashSet<ObjetMonde>();
         }
     
         public int Id { get; set; }
         public string Description { get; set; }
-        public int LimiteX { get; set; }
-        public int LimiteY { get; set; }
+        public string LimiteX { get; set; }
+        public string LimiteY { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Classes> Classes { get; set; }
+        public virtual ICollection<Classe> Classes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ObjetMonde> ObjetMondes { get; set; }
+        public virtual ICollection<Hero> Heros { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Items> Items { get; set; }
+        public virtual ICollection<Item> Items { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Monstre> Monstres { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Hero> Heroes { get; set; }
+        public virtual ICollection<ObjetMonde> ObjetMondes { get; set; }
     }
 }

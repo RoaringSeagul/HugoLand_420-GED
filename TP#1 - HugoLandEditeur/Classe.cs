@@ -12,22 +12,24 @@ namespace HugoLandEditeur
     using System;
     using System.Collections.Generic;
     
-    public partial class CompteJoueur
+    public partial class Classe
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CompteJoueur()
+        public Classe()
         {
             this.Heros = new HashSet<Hero>();
         }
     
         public int Id { get; set; }
-        public string NomUtilisateur { get; set; }
-        public string Password { get; set; }
-        public string Courriel { get; set; }
-        public string Prenom { get; set; }
-        public string Nom { get; set; }
-        public int TypeUtilisateur { get; set; }
+        public string NomClasse { get; set; }
+        public string Description { get; set; }
+        public int StatBaseStr { get; set; }
+        public int StatBaseDex { get; set; }
+        public int StatBaseInt { get; set; }
+        public int StatBaseVitalite { get; set; }
+        public int MondeId { get; set; }
     
+        public virtual Monde Monde { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Hero> Heros { get; set; }
     }

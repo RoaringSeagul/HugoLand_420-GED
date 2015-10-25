@@ -16,11 +16,12 @@ namespace HugoLandEditeur
     {
         public int Id { get; set; }
         public string Nom { get; set; }
-        public int X { get; set; }
-        public int Y { get; set; }
-        public int StatVitalitê { get; set; }
-        public int StatDmgMin { get; set; }
-        public int StatDmgMax { get; set; }
+        public int Niveau { get; set; }
+        public int x { get; set; }
+        public int y { get; set; }
+        public int StatPV { get; set; }
+        public float StatDmgMin { get; set; }
+        public float StatDmgMax { get; set; }
         public int MondeId { get; set; }
     
         public virtual Monde Monde { get; set; }

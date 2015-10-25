@@ -15,9 +15,10 @@ namespace HugoLandEditeur
     public partial class EffetItem
     {
         public int Id { get; set; }
-        public string ValeurEffet { get; set; }
-        public string TypeEffet { get; set; }
+        public int ItemId { get; set; }
+        public int ValeurEffet { get; set; }
+        public int TypeEffet { get; set; }
     
-        public virtual Items Item { get; set; }
+        public virtual Item Item { get; set; }
     }
 }

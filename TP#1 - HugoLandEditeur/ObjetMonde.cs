@@ -15,10 +15,10 @@ namespace HugoLandEditeur
     public partial class ObjetMonde
     {
         public int Id { get; set; }
-        public int X { get; set; }
-        public int Y { get; set; }
+        public int x { get; set; }
+        public int y { get; set; }
         public string Description { get; set; }
-        public string TypeObjet { get; set; }
+        public int TypeObjet { get; set; }
         public int MondeId { get; set; }
     
         public virtual Monde Monde { get; set; }
