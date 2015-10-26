@@ -4,33 +4,40 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Shapes;
 
 namespace HugoLandEditeur.Presentation
 {
     public partial class frmLogin : Form
     {
+        public int UserType { get; private set; }
         public frmLogin()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Va regarder si l'utilisateur existe dans la base de données et ensuite va le connecté d'après ses privilège
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConnect_Click(object sender, EventArgs e)
         {
             using (var db = new GameContext())
             {
-                var queryUsername = from user in db.CompteJoueurs
+                var queryUsername = (from user in db.CompteJoueurs
                                 where user.NomUtilisateur == txtUsername.Text
-                                select user;
+                                select user).ToList();
 
-                if (queryUsername.First().NomUtilisateur != "")
+                if (queryUsername.Count > 0)
                     if (txtPassword.Text != "" && queryUsername.First().Password == txtPassword.Text)
                     {
-                        this.Hide();
-                        frmMain Main = new frmMain();
-                        Main.ShowDialog();
+                        UserType = queryUsername.First().TypeUtilisateur;
+                        this.TopMost = false;
                         this.Close();
                     }
                     else
@@ -43,6 +50,21 @@ namespace HugoLandEditeur.Presentation
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        /// <summary>
+        /// Met cette fenêtre en premier plan
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            this.TopMost = true;
+            this.Activate();
+        }
+
+        private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
         }
     }
 }

@@ -401,7 +401,6 @@ namespace HugoLandEditeur
             this.picTiles.TabIndex = 2;
             this.picTiles.TabStop = false;
             this.picTiles.Click += new System.EventHandler(this.picTiles_Click);
-            //this.picTiles.Paint += new System.Windows.Forms.PaintEventHandler(this.picTiles_Paint);
             this.picTiles.MouseLeave += new System.EventHandler(this.picTiles_MouseLeave);
             this.picTiles.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picTiles_MouseMove);
             // 
