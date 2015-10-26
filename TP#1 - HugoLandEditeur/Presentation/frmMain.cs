@@ -66,7 +66,7 @@ namespace HugoLandEditeur
         {
 			// Montre la fenetre de connexion a premier plan
             Presentation.frmLogin Login = new Presentation.frmLogin();
-            Login.ShowDialog();
+            //Login.ShowDialog();
             // TP HugoLand: Ajout d'un bouton "Ajouter Utilisateur" si l'utilisateur est administrateur
             if (Login.UserType == 1)
             {
@@ -678,6 +678,16 @@ namespace HugoLandEditeur
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void mnuFileClose_Click(object sender, EventArgs e)
+        {
+            m_bOpen = false;
+            m_bRefresh = false;
+            m_bResize = false;
+            picMap.Visible = false;
+
+            m_MenuLogic();
         }
     }
 }
