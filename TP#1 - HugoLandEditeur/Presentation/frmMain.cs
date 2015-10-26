@@ -31,7 +31,8 @@ namespace HugoLandEditeur
         private int m_ActiveYIndex;
         private int m_ActiveTileID;
         private int m_ActiveTileXIndex;
-        private int m_ActiveTileYIndex;		
+        private int m_ActiveTileYIndex;
+        GameContext _db;
 
         /// <summary>
         /// Summary description for Form1.
@@ -73,7 +74,9 @@ namespace HugoLandEditeur
                 mnuSettings.Visible = true;
                 mnuCreateNewUser.Enabled = true;
             }
-			
+
+            _db = new GameContext();
+
             m_Map = new CMap();
             m_TileLibrary = new CTileLibrary();
             m_Map.TileLibrary = m_TileLibrary;
@@ -552,6 +555,8 @@ namespace HugoLandEditeur
         \* -------------------------------------------------------------- */
         private void m_SaveMap()
         {
+            _db.SaveChanges();
+
             //DialogResult result;
 
             //dlgSaveMap.Title = "Save Map";

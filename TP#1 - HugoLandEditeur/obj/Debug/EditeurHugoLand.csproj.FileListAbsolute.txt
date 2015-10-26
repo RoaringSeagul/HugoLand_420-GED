@@ -46,3 +46,19 @@ C:\Users\Utilisateur\Desktop\HugoLand_420-GED\TP#1 - HugoLandEditeur\obj\Debug\H
 C:\Users\Utilisateur\Desktop\HugoLand_420-GED\TP#1 - HugoLandEditeur\obj\Debug\HugoLandEditeur.frmAbout.resources
 C:\Users\Utilisateur\Desktop\HugoLand_420-GED\TP#1 - HugoLandEditeur\obj\Debug\HugoLandEditeur.frmMain.resources
 C:\Users\Utilisateur\Desktop\HugoLand_420-GED\TP#1 - HugoLandEditeur\obj\Debug\EditeurHugoLand.csproj.GenerateResource.Cache
+C:\technique informatique\session 3\base de données\tp\tp1\hugoland\HugoLand_420-GED\TP#1 - HugoLandEditeur\bin\Debug\HugoLandEditeur.exe.config
+C:\technique informatique\session 3\base de données\tp\tp1\hugoland\HugoLand_420-GED\TP#1 - HugoLandEditeur\obj\Debug\HugoLandEditeur.exe
+C:\technique informatique\session 3\base de données\tp\tp1\hugoland\HugoLand_420-GED\TP#1 - HugoLandEditeur\obj\Debug\HugoLandEditeur.pdb
+C:\technique informatique\session 3\base de données\tp\tp1\hugoland\HugoLand_420-GED\TP#1 - HugoLandEditeur\bin\Debug\HugoLandEditeur.exe
+C:\technique informatique\session 3\base de données\tp\tp1\hugoland\HugoLand_420-GED\TP#1 - HugoLandEditeur\bin\Debug\HugoLandEditeur.pdb
+C:\technique informatique\session 3\base de données\tp\tp1\hugoland\HugoLand_420-GED\TP#1 - HugoLandEditeur\bin\Debug\EntityFramework.dll
+C:\technique informatique\session 3\base de données\tp\tp1\hugoland\HugoLand_420-GED\TP#1 - HugoLandEditeur\bin\Debug\EntityFramework.SqlServer.dll
+C:\technique informatique\session 3\base de données\tp\tp1\hugoland\HugoLand_420-GED\TP#1 - HugoLandEditeur\bin\Debug\EntityFramework.xml
+C:\technique informatique\session 3\base de données\tp\tp1\hugoland\HugoLand_420-GED\TP#1 - HugoLandEditeur\bin\Debug\EntityFramework.SqlServer.xml
+C:\technique informatique\session 3\base de données\tp\tp1\hugoland\HugoLand_420-GED\TP#1 - HugoLandEditeur\obj\Debug\EditeurHugoLand.csprojResolveAssemblyReference.cache
+C:\technique informatique\session 3\base de données\tp\tp1\hugoland\HugoLand_420-GED\TP#1 - HugoLandEditeur\obj\Debug\HugoLandEditeur.Presentation.frmLogin.resources
+C:\technique informatique\session 3\base de données\tp\tp1\hugoland\HugoLand_420-GED\TP#1 - HugoLandEditeur\obj\Debug\HugoLandEditeur.Presentation.frmNewUser.resources
+C:\technique informatique\session 3\base de données\tp\tp1\hugoland\HugoLand_420-GED\TP#1 - HugoLandEditeur\obj\Debug\HugoLandEditeur.Properties.Resources.resources
+C:\technique informatique\session 3\base de données\tp\tp1\hugoland\HugoLand_420-GED\TP#1 - HugoLandEditeur\obj\Debug\HugoLandEditeur.frmAbout.resources
+C:\technique informatique\session 3\base de données\tp\tp1\hugoland\HugoLand_420-GED\TP#1 - HugoLandEditeur\obj\Debug\HugoLandEditeur.frmMain.resources
+C:\technique informatique\session 3\base de données\tp\tp1\hugoland\HugoLand_420-GED\TP#1 - HugoLandEditeur\obj\Debug\EditeurHugoLand.csproj.GenerateResource.Cache
