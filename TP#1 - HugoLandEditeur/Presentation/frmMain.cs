@@ -673,5 +673,10 @@ namespace HugoLandEditeur
             frmNewUser AddUser = new frmNewUser();
             AddUser.ShowDialog();
         }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

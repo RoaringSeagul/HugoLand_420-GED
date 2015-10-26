@@ -38,7 +38,7 @@ namespace HugoLandEditeur.Presentation
                     {
                         UserType = queryUsername.First().TypeUtilisateur;
                         this.TopMost = false;
-                        this.Close();
+                        this.Hide();
                     }
                     else
                         lblActions.Text = "Le mot de passe est incorrect";
@@ -49,7 +49,7 @@ namespace HugoLandEditeur.Presentation
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         /// <summary>
@@ -63,8 +63,9 @@ namespace HugoLandEditeur.Presentation
             this.Activate();
         }
 
-        private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
+        private void frmLogin_FormClosed(object sender, FormClosedEventArgs e)
         {
+            Application.Exit();
         }
     }
 }
