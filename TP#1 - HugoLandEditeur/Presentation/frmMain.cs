@@ -8,12 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using HugoLandEditeur.Presentation;
 
 namespace HugoLandEditeur
 {
     public partial class frmMain : Form
     {
+
+
         private CMap m_Map;
         private CTileLibrary m_TileLibrary;
         private int m_XSel;
@@ -63,16 +64,6 @@ namespace HugoLandEditeur
     \* -------------------------------------------------------------- */
         private void frmMain_Load(object sender, System.EventArgs e)
         {
-            // Montre la fenetre de connexion a premier plan
-            frmLogin Login = new frmLogin();
-            Login.ShowDialog();
-            // TP HugoLand: Ajout d'un bouton "Ajouter Utilisateur" si l'utilisateur est administrateur
-            if (Login.UserType == 1)
-            {
-                mnuSettings.Visible = true;
-                mnuCreateNewUser.Enabled = true;
-            }
-
             m_Map = new CMap();
             m_TileLibrary = new CTileLibrary();
             m_Map.TileLibrary = m_TileLibrary;
@@ -625,6 +616,7 @@ namespace HugoLandEditeur
             bEnabled = m_bOpen;
             mnuFileSave.Enabled = bEnabled;
             mnuFileClose.Enabled = bEnabled;
+            mnuCreateNewUser.Enabled = bEnabled;
             mnuZoom.Enabled = bEnabled;
             tbbSave.Enabled = bEnabled;
         }
@@ -670,13 +662,7 @@ namespace HugoLandEditeur
 
         private void mnuCreateNewUser_Click(object sender, EventArgs e)
         {
-            frmNewUser AddUser = new frmNewUser();
-            AddUser.ShowDialog();
-        }
 
-        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

@@ -401,6 +401,7 @@ namespace HugoLandEditeur
             this.picTiles.TabIndex = 2;
             this.picTiles.TabStop = false;
             this.picTiles.Click += new System.EventHandler(this.picTiles_Click);
+            this.picTiles.Paint += new System.Windows.Forms.PaintEventHandler(this.picTiles_Paint);
             this.picTiles.MouseLeave += new System.EventHandler(this.picTiles_MouseLeave);
             this.picTiles.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picTiles_MouseMove);
             // 
@@ -505,7 +506,6 @@ namespace HugoLandEditeur
             this.Menu = this.mbMain;
             this.Name = "frmMain";
             this.Text = "Éditeur de monde Hugo Land";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picEditArea)).EndInit();
             this.panelTools.ResumeLayout(false);
