@@ -64,6 +64,16 @@ namespace HugoLandEditeur
     \* -------------------------------------------------------------- */
         private void frmMain_Load(object sender, System.EventArgs e)
         {
+			// Montre la fenetre de connexion a premier plan
+            Presentation.frmLogin Login = new Presentation.frmLogin();
+            Login.ShowDialog();
+            // TP HugoLand: Ajout d'un bouton "Ajouter Utilisateur" si l'utilisateur est administrateur
+            if (Login.UserType == 1)
+            {
+                mnuSettings.Visible = true;
+                mnuCreateNewUser.Enabled = true;
+            }
+			
             m_Map = new CMap();
             m_TileLibrary = new CTileLibrary();
             m_Map.TileLibrary = m_TileLibrary;
