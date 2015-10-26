@@ -626,7 +626,6 @@ namespace HugoLandEditeur
             bEnabled = m_bOpen;
             mnuFileSave.Enabled = bEnabled;
             mnuFileClose.Enabled = bEnabled;
-            mnuCreateNewUser.Enabled = bEnabled;
             mnuZoom.Enabled = bEnabled;
             tbbSave.Enabled = bEnabled;
         }
@@ -672,7 +671,13 @@ namespace HugoLandEditeur
 
         private void mnuCreateNewUser_Click(object sender, EventArgs e)
         {
+            Presentation.frmNewUser AddUser = new Presentation.frmNewUser();
+            AddUser.ShowDialog();
+        }
 
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
