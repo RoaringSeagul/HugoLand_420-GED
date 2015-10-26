@@ -34,7 +34,6 @@
             System.Windows.Forms.Label nomUtilisateurLabel;
             System.Windows.Forms.Label passwordLabel;
             System.Windows.Forms.Label prenomLabel;
-            System.Windows.Forms.Label typeUtilisateurLabel;
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -43,15 +42,17 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.txtUserType = new System.Windows.Forms.TextBox();
             this.lblNewUserActions = new System.Windows.Forms.Label();
+            this.gbChoseUser = new System.Windows.Forms.GroupBox();
+            this.rdAdmin = new System.Windows.Forms.RadioButton();
+            this.rdUser = new System.Windows.Forms.RadioButton();
             courrielLabel = new System.Windows.Forms.Label();
             nomLabel = new System.Windows.Forms.Label();
             nomUtilisateurLabel = new System.Windows.Forms.Label();
             passwordLabel = new System.Windows.Forms.Label();
             prenomLabel = new System.Windows.Forms.Label();
-            typeUtilisateurLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this._bsUser)).BeginInit();
+            this.gbChoseUser.SuspendLayout();
             this.SuspendLayout();
             // 
             // courrielLabel
@@ -99,18 +100,9 @@
             prenomLabel.TabIndex = 26;
             prenomLabel.Text = "Prenom:";
             // 
-            // typeUtilisateurLabel
-            // 
-            typeUtilisateurLabel.AutoSize = true;
-            typeUtilisateurLabel.Location = new System.Drawing.Point(23, 170);
-            typeUtilisateurLabel.Name = "typeUtilisateurLabel";
-            typeUtilisateurLabel.Size = new System.Drawing.Size(83, 13);
-            typeUtilisateurLabel.TabIndex = 28;
-            typeUtilisateurLabel.Text = "Type Utilisateur:";
-            // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(56, 193);
+            this.btnCancel.Location = new System.Drawing.Point(56, 222);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 15;
@@ -120,7 +112,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(137, 193);
+            this.btnSave.Location = new System.Drawing.Point(137, 222);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 16;
@@ -172,14 +164,6 @@
             this.txtFirstName.Size = new System.Drawing.Size(100, 20);
             this.txtFirstName.TabIndex = 27;
             // 
-            // txtUserType
-            // 
-            this.txtUserType.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._bsUser, "TypeUtilisateur", true));
-            this.txtUserType.Location = new System.Drawing.Point(112, 167);
-            this.txtUserType.Name = "txtUserType";
-            this.txtUserType.Size = new System.Drawing.Size(100, 20);
-            this.txtUserType.TabIndex = 29;
-            // 
             // lblNewUserActions
             // 
             this.lblNewUserActions.AutoSize = true;
@@ -189,11 +173,45 @@
             this.lblNewUserActions.TabIndex = 30;
             this.lblNewUserActions.Text = "Entrer un nouvelle utilisateur : ";
             // 
+            // gbChoseUser
+            // 
+            this.gbChoseUser.Controls.Add(this.rdUser);
+            this.gbChoseUser.Controls.Add(this.rdAdmin);
+            this.gbChoseUser.Location = new System.Drawing.Point(26, 166);
+            this.gbChoseUser.Name = "gbChoseUser";
+            this.gbChoseUser.Size = new System.Drawing.Size(186, 50);
+            this.gbChoseUser.TabIndex = 31;
+            this.gbChoseUser.TabStop = false;
+            this.gbChoseUser.Text = "Choisir votre utilisateur";
+            // 
+            // rdAdmin
+            // 
+            this.rdAdmin.AutoSize = true;
+            this.rdAdmin.Location = new System.Drawing.Point(9, 19);
+            this.rdAdmin.Name = "rdAdmin";
+            this.rdAdmin.Size = new System.Drawing.Size(91, 17);
+            this.rdAdmin.TabIndex = 0;
+            this.rdAdmin.TabStop = true;
+            this.rdAdmin.Text = "Administrateur";
+            this.rdAdmin.UseVisualStyleBackColor = true;
+            // 
+            // rdUser
+            // 
+            this.rdUser.AutoSize = true;
+            this.rdUser.Location = new System.Drawing.Point(106, 19);
+            this.rdUser.Name = "rdUser";
+            this.rdUser.Size = new System.Drawing.Size(71, 17);
+            this.rdUser.TabIndex = 1;
+            this.rdUser.TabStop = true;
+            this.rdUser.Text = "Utilisateur";
+            this.rdUser.UseVisualStyleBackColor = true;
+            // 
             // frmNewUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(224, 228);
+            this.ClientSize = new System.Drawing.Size(224, 259);
+            this.Controls.Add(this.gbChoseUser);
             this.Controls.Add(this.lblNewUserActions);
             this.Controls.Add(courrielLabel);
             this.Controls.Add(this.txtEmail);
@@ -205,8 +223,6 @@
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(prenomLabel);
             this.Controls.Add(this.txtFirstName);
-            this.Controls.Add(typeUtilisateurLabel);
-            this.Controls.Add(this.txtUserType);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCancel);
             this.Name = "frmNewUser";
@@ -214,6 +230,8 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmNewUser_FormClosing);
             this.Load += new System.EventHandler(this.frmNewUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this._bsUser)).EndInit();
+            this.gbChoseUser.ResumeLayout(false);
+            this.gbChoseUser.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,7 +247,9 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtFirstName;
-        private System.Windows.Forms.TextBox txtUserType;
         private System.Windows.Forms.Label lblNewUserActions;
+        private System.Windows.Forms.GroupBox gbChoseUser;
+        private System.Windows.Forms.RadioButton rdUser;
+        private System.Windows.Forms.RadioButton rdAdmin;
     }
 }

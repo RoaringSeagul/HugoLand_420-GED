@@ -36,7 +36,10 @@ namespace HugoLandEditeur.Presentation
             User.NomUtilisateur = txtUsername.Text;
             User.Password = txtPassword.Text;
             User.Prenom = txtFirstName.Text;
-            User.TypeUtilisateur = int.Parse(txtUserType.Text);
+            if (rdAdmin.Checked)
+                User.TypeUtilisateur = 1;
+            else if (rdUser.Checked)
+                User.TypeUtilisateur = 2;
             _dbContext.CompteJoueurs.Add(User);
             _dbContext.SaveChanges();
 
